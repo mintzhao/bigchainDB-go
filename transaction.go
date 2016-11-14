@@ -59,18 +59,23 @@ func NewTransaction(asset *Asset, operation Operation, version, timestamp int64)
 	}
 	tx.Asset = asset
 
-
-
 	return tx
+}
+
+type TransactionInput struct {
+	ConditionId   int64  `json:"cid,omitempty"`
+	TransactionId string `json:"txid,omitempty"`
 }
 
 // A Fulfillment is used to spend assets locked by a Condition
 type Fulfillment struct {
-
 }
 
+// Fulfillment shims a Cryptocondition Fulfillment for BigchainDB
+func NewFulfillment()  {
+	
+}
 
 // A Condition is used to lock an asset
 type Condition struct {
-
 }
